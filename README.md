@@ -24,6 +24,11 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+```
+from django.contrib import admin
+from.models import Bank,BankAdmin
+admin.site.register(Bank,BankAdmin)
+
 from django.db import models
 from django.contrib import admin
 class Bank(models.Model):
@@ -34,12 +39,10 @@ class Bank(models.Model):
   Email=models.EmailField()
   Branch=models.CharField(max_length=21)
 
- class BankAdmin(admin.ModelAdmin):
- list_display=('Name','Accountno','Aadharno','DoB','Email','Branch')
-from django.contrib import admin
-from.models import Bank,BankAdmin
-admin.site.register(Bank,BankAdmin)
+class BankAdmin(admin.ModelAdmin):
+  list_display=('Name','Accountno','Aadharno','DoB','Email','Branch')
 
+```
 
 
 ## OUTPUT
